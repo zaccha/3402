@@ -6,28 +6,31 @@
   position: sticky;
   top: 0;
   background-color: none;
-  padding: 20px;
+  padding: 50px;
   font-size: 20px;
-}
-
 </style>
 <head>
+
+  <meta name="ZCP" content="Zachary Chan's Portfolio" />
+  <title>Zachary Chans portfolio</title>
+<div id="sticky" style="background-color:#2b4f8f;padding:25px;">
+<h1 class="animate__animated animate__fadeInLeft" style="color:white;text-align:center;font-size: 50px;font-family:copperplate">Zachary A Chan's Portfolio</h1>
+</div class = "sticky">
 <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
-	<meta name="ZCP" content="Zachary Chan's Portfolio" />
-  <title>Zachary Chans portfolio</title>
-<div id="sticky" style="background-color:#2b4f8f;padding:20px; position: relative;">
-<h1 class="animate__animated animate__fadeInLeft" style="color:white;text-align:center;font-size: 50px;font-family:copperplate" >Zachary Chan</h1>
-</div>
-<style type="text/css">;
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
+</head>
+<style type="text/css">
+  * {
+  box-sizing: border-box;
 }
-.row {
+.column{
+  float:left;
+  width:50%;
+  padding:;
+}
+.row:after{
   content: "";
   display: table;
   clear: both;
@@ -35,19 +38,18 @@
 .tab {
   overflow: hidden;
   background-color: white;
-  padding: 4px 4px;
 }
 
 /* Style the buttons inside the tab */
 .tab button {
   background-color: inherit;
-  float: middle;
+  float: left;
   border: none;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 /* Change background color of buttons on hover */
@@ -61,98 +63,94 @@
 
 /* Style the tab content */
 .tabcontent {
-  padding: 2px 16px;
+  display: none;
+  padding: 6px 12px;
   border: none;
   border-top: none;
   font-family: courier new;
-  content: "";
-  display: table;
-  clear: both;
 }
 .buttonf {
-	background-color: #6994e0;
-	border: none;
-	color:white;
-	padding: 10px 25px;
-	text-align: center;
-	display: inline-block;
-	cursor: pointer;
-	font-family: "courier";
-	font-size: 15px;
-  margin-left:10px;
-  margin-right:10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  background-color: #6994e0;
+  border: none;
+  color:white;
+  padding: 10px 25px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  font-family: "courier";
+  font-size: 15px;
   }
-.animate__animated.animate__fadeIn{
-  --animate-duration:2s;
+.fadeIn{
+  animation-duration:2s;
+}
+.fadeInLeft{
+  animation-duration:1.5s;
 }
 }
 </style>
 </head>
 <body>
-<div id="sticky" class="tab animate__animated animate__fadeIn">
+<div class="tab animate__animated animate__fadeIn">
   <button style="font-family:copperplate" class="tablinks" onclick="openCity(event, 'Home')">Home</button>
   <button style="font-family:copperplate" class="tablinks" onclick="openCity(event, 'About Me')">About Me</button>
   <button style="font-family:copperplate" class="tablinks" onclick="openCity(event, 'Portfolio')">Portfolio</button>
   <button style="font-family:copperplate" class="tablinks" onclick="openCity(event, 'Contact')">Contact</button>
 </div>
-<div id="Home" class="tabcontent" style="display:block;">
-  <div class="column" style="background-color: white">
+<div id="Home" class="tabcontent" style="display:block">
 <h1>Zachary Alexander Chan</h1>
- <p>I am currently a senior at The University of Colorado - Boulder, studying Information Science with a minor in Business Analytics. At The University of Colorado outside of school I spend my free time skiing, fishing, hiking or playing golf.</p>
-</div>
-<div class="column">
+ <p>I am currently a senior at The University of Colorado - Boulder, studying Information Science with a minor in Business Analytics. At The University of Colorado outside of school I spend my free time skiing, fishing, hiking or playing golf.
+  <br>
  <img src="https://raw.githubusercontent.com/zaccha/3402/master/img-0023.jpg" alt="Me with Kangaroo" style="width:367;max-width:100%">
-</div>
 </div>
 
 <div id="About Me" class="tabcontent">
 <p> I am originally from Massachusetts where I grew up mostly playing soccer and skiing. In highschool I took a C++ class where I first got my in into the programming world, then at CU I moved around majors abit as I was curious about Mechanical Engineering, however I found out about the Information Science Major and that seemed to be a calling. Moreover my interests that are school related are data analytics with API's and databases, data manipuation, electronic warfare and cybersecurity. Overall I am very good with thinking on my feet, getting tasks done timely with the details right, as well as friendly and very passionate with my interests and hobbies.</p>
-  <div class="column" style="background-color: white">
+<div class="row">
+  <div class="column">
 <h2> Relevant Courses</h2>
-	<li>Quantitative Reasoning</li>
-	<li>Conputational Reasoning 2</li>
-	<li>Information Exploration</li>
-	<li>Information Ecosystems</li>
-	<li>User-Centered Design</li>
-	<li>Information Exposition</li>
-	<li>Special Topics in Computer Science</li>
+<ul>
+  <li>Quantitative Reasoning</li>
+  <li>Conputational Reasoning 2</li>
+  <li>Information Exploration</li>
+  <li>Information Ecosystems</li>
+  <li>User-Centered Design</li>
+  <li>Information Exposition</li>
+  <li>Special Topics in Computer Science</li>
 </ul>
 </div>
-<div class="column" style="background-color: white">
+<div class="column">
 <h2> Work Experience</h2>
-<ul>
 <h3>Sun & Ski - Woburn, MA</h3>
 <h4>Sales Associate</h4>
-	<li>Aid customers for specific/specialized outdoor needs and activities</li>
-	<li>Grossed upwards of $8,000 of our stores product within a shift</li>
-	<li>Organize and maintain inventory of skis and equipment</li>
-	<li>Tune and mount ski and snowboarding equipment</li>
-<h3> MR.Butter Skis - Boulder, CO</h3>
-	<li>Created social Media identity and a website to promote skiing and surfing</li>
-	<li>positively grossed off clothing, stickers, and softgoods</li>
-	<li>designed and implemented organic surf and ski wax</li>
+<ul>
+  <li>Aid customers for specific/specialized outdoor needs and activities</li>
+  <li>Grossed upwards of $8,000 of our stores product within a shift</li>
+  <li>Organize and maintain inventory of skis and equipment</li>
+  <li>Tune and mount ski and snowboarding equipment</li>
 </ul>
+<h3> MR.Butter Skis - Boulder, CO</h3>
+<ul>
+  <li>Created social Media identity and a website to promote skiing and surfing</li>
+  <li>positively grossed off clothing, stickers, and softgoods</li>
+  <li>designed and implemented organic surf and ski wax</li>
+</ul>
+</div>
 </div>
 </div>
 <div id="Portfolio" class="tabcontent">
-  <div class="column">
 <h2>Projects</h2>
 <button class="buttonf" onclick="window.open('https://zaccha.github.io/3402/3401_final_proj_COVID_Weather_Zachary_Chan.html','_blank')">Covid and Weather Correlations</button>
-<br>
 <button class="buttonf" onclick="window.open('https://zaccha.github.io/3402/wa4-visualization_Zachary%20Chan.html','_blank')">Game of Thrones Battle soldier Analysis</button>
-<h2>Resume</h2>
-<img src="https://zaccha.github.io/3402/Resume%202:27:21.jpg" width="950px" height="1100">
-</div>
+<br>
+<br>
+<img src="https://zaccha.github.io/3402/Zachary%20Chan%20Resume%202:26:2021-1.jpg" alt="Resume" width="500" height="600">
 </div>
 <div id="Contact" class="tabcontent">
-  <div class="column">
 <h1>Contact Info</h1>
 <p>Email Address: zchan5998@gmail.com</p>
 <button class="buttonf" onclick="window.open('https://github.com/zaccha','_blank')">Github</button>
 <button class="buttonf" onclick="window.open('https://www.linkedin.com/in/zachary-chan-0047/','_blank')">LinkedIn</button>
-</div>
+
 
 </div>
 
@@ -171,5 +169,4 @@ function openCity(evt, cityName) {
   evt.currentTarget.className += " active";
 }
 </script>
-</body>
 </html>
