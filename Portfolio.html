@@ -8,19 +8,20 @@
   background-color: none;
   padding: 20px;
   font-size: 20px;
+}
+
 </style>
 <head>
-
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 	<meta name="ZCP" content="Zachary Chan's Portfolio" />
   <title>Zachary Chans portfolio</title>
-<div id="sticky" style="background-color:#2b4f8f;padding:20px;">
-<h1 style="color:white;text-align:center;font-size: 50px;font-family:copperplate">Zachary Chan</h1>
+<div id="sticky" style="background-color:#2b4f8f;padding:20px; position: relative;">
+<h1 class="animate__animated animate__fadeInLeft" style="color:white;text-align:center;font-size: 50px;font-family:copperplate" >Zachary Chan</h1>
 </div>
-</head>
-<style type="text/css">
-*{
-    box-sizing: border-box;
-  }
+<style type="text/css">;
 .column {
   float: left;
   width: 50%;
@@ -83,17 +84,20 @@
   margin-top: 10px;
   margin-bottom: 10px;
   }
+.animate__animated.animate__fadeIn{
+  --animate-duration:2s;
+}
 }
 </style>
 </head>
 <body>
-<div class="tab">
+<div id="sticky" class="tab animate__animated animate__fadeIn">
   <button style="font-family:copperplate" class="tablinks" onclick="openCity(event, 'Home')">Home</button>
   <button style="font-family:copperplate" class="tablinks" onclick="openCity(event, 'About Me')">About Me</button>
   <button style="font-family:copperplate" class="tablinks" onclick="openCity(event, 'Portfolio')">Portfolio</button>
   <button style="font-family:copperplate" class="tablinks" onclick="openCity(event, 'Contact')">Contact</button>
 </div>
-<div id="Home" class="tabcontent" style="display:block">
+<div id="Home" class="tabcontent" style="display:flex;">
   <div class="column" style="background-color: white">
 <h1>Zachary Alexander Chan</h1>
  <p>I am currently a senior at The University of Colorado - Boulder, studying Information Science with a minor in Business Analytics. At The University of Colorado outside of school I spend my free time skiing, fishing, hiking or playing golf.</p>
@@ -167,4 +171,5 @@ function openCity(evt, cityName) {
   evt.currentTarget.className += " active";
 }
 </script>
+</body>
 </html>
