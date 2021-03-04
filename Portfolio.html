@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;900&display=swap" rel="stylesheet">
 <style type="text/css">
 #sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   background-color: none;
-  padding: 15px;
+  padding: 10px;
+  padding-bottom: 0px;
   font-size: 25px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600;900&display=swap');
 </style>
-<head>
 
   <meta name="ZCP" content="Zachary Chan's Portfolio" />
   <title>Zachary Chans portfolio</title>
-<div style="background-color:#2b4f8f;padding:20px;">
-<h1 class="animate__animated animate__fadeInLeft" style="color:white;text-align:center;font-size: 40px;font-family:copperplate">Zachary Chan</h1>
+<div style="background-color:#2b4f8f;padding:10px">
+<h1 class="animate__animated animate__fadeIn" style="color:white;text-align:center;font-size: 50px;font-family:Raleway">Zachary Chan</h1>
 </div>
 <link
     rel="stylesheet"
@@ -38,27 +43,32 @@
 .tab {
   overflow: hidden;
   background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 /* Style the buttons inside the tab */
 .tab button {
   background-color: inherit;
-  float: left;
+  float: center;
   border: none;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
   font-size: 17px;
+  font-family:"Raleway";
 }
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-  background-color: #ddd;
+  background-color: #ebebeb;
 }
 /* Create an active/current tablink class */
 .tab button.active {
-  background-color: #ccc;
+  background-color: #d4d4d4;
+  color: white;
 }
 
 /* Style the tab content */
@@ -67,7 +77,7 @@
   padding: 6px 12px;
   border: none;
   border-top: none;
-  font-family: courier new;
+  font-family: "courier new";
 }
 .buttonf {
   background-color: #6994e0;
@@ -80,25 +90,28 @@
   font-family: "courier";
   font-size: 15px;
   }
-.fadeIn{
+.animate__animated.animate__fadeIn{
+  animation-duration:4s;
+}
+.animate__animated.animate__fadeInLeft{
   animation-duration:2s;
 }
-.fadeInLeft{
-  animation-duration:1.5s;
+.animate__animated.animate__zoomIn{
+  animation-duration:.7s;
 }
 }
 </style>
 </head>
 <body>
 <div id="sticky" class="tab animate__animated animate__fadeIn">
-  <button style="font-family:copperplate" class="tablinks" onclick="openTab(event, 'Home')">Home</button>
-  <button style="font-family:copperplate" class="tablinks" onclick="openTab(event, 'About Me')">About Me</button>
-  <button style="font-family:copperplate" class="tablinks" onclick="openTab(event, 'Portfolio')">Portfolio</button>
-  <button style="font-family:copperplate" class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
+  <button class="tablinks" onclick="openTab(event, 'Home')">Home</button>
+  <button class="tablinks" onclick="openTab(event, 'About Me')">About Me</button>
+  <button class="tablinks" onclick="openTab(event, 'Portfolio')">Portfolio</button>
+  <button class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
 </div>
-<div id="Home" class="tabcontent" style="display:block">
+<div id="Home" class="tabcontent animate__animated animate__zoomIn" style="display:block;">
 <h1>Zachary Alexander Chan</h1>
- <p>I am currently a senior at The University of Colorado - Boulder, studying Information Science with a minor in Business Analytics. At The University of Colorado outside of school I spend my free time skiing, fishing, hiking or playing golf.
+<p>I am currently a senior studying information science, and minoring in business analytics at the University of Colorado, Boulder. Outside of school, I enjoy skiing, fishing, hiking, and playing golf.
   <br>
  <img src="https://raw.githubusercontent.com/zaccha/3402/master/img-0023.jpg" alt="Me with Kangaroo" style="width:367;max-width:100%">
 </div>
