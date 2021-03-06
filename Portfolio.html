@@ -64,6 +64,7 @@
   transition: 0.3s;
   font-size: 17px;
   font-family:"Raleway";
+  display:inline-block;
 }
 
 /* Change background color of buttons on hover */
@@ -116,7 +117,12 @@
 </div>
 <div id="Home" class="tabcontent animate__animated animate__zoomIn" style="display:inline-block">
 <h1>Zachary Alexander Chan</h1>
-<p>I am currently a senior studying information science, and minoring in business analytics at the University of Colorado, Boulder. Outside of school, I enjoy skiing, fishing, hiking, and playing golf.
+<p>I am currently a senior studying information science, and minoring in business analytics at the University of Colorado, Boulder. Outside of school, I enjoy skiing, fishing, hiking, and playing golf.</p>
+<br>
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-secondary" onclick="window.open('https://gerinberg.com/','_blank')">Inspiration</button>
+  <button type="button" class="btn btn-secondary" onclick="window.open('https://zaccha.github.io/3402/Portfolio-Redesign.html','_blank')">Redesign</button>
+</div>
   <br>
  <img src="https://raw.githubusercontent.com/zaccha/3402/master/img-0023.jpg" class="img-fluid" alt="Me with Kangaroo" style="width:367;max-width:100%">
 </div>
@@ -168,10 +174,20 @@
 <p>Email Address: zchan5998@gmail.com</p>
 <button class="buttonf" onclick="window.open('https://github.com/zaccha','_blank')">Github</button>
 <button class="buttonf" onclick="window.open('https://www.linkedin.com/in/zachary-chan-0047/','_blank')">LinkedIn</button>
-
-
 </div>
+<div id="Photos" class="tabcontent">
+  <h2>Photos</h2>
+  <div class="row">
+    <div class="column">
+      <img src="https://raw.githubusercontent.com/zaccha/3402/master/img-0023.jpg" class="img-fluid" alt="Me with Kangaroo" style="width:367;max-width:100%">
+    </div>
+    <div class="column">
+      <img src="https://raw.githubusercontent.com/zaccha/3402/master/img-0023.jpg" class="img-fluid" alt="Me with Kangaroo" style="width:367;max-width:100%">
+    </div>
 
+
+ </div>     
+</div>
 <script>
 function openTab(evt, tabName) {
   var i, tabcontent, tablinks;
