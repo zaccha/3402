@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>chart3</title>
+	<!-- Consult the documentation to improve the interactivity of your chart. The easiest way to do this is to add nice tooltips, but you can also add things like click interactions using Javascript events. Consult the docs for whichever library you end up using.
+You must include a final version of your chart under a section called version 3.
+Interactivity is one huge advantage of showing plots over the web instead of in a PDF or in a notebook.
+You should explain in text how you added interactivity and what (if anything) this adds to the plot. -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+</head>
+
+<body>
+<h1> Version #3 </h1>
+<p>So for Version 3 to increase the interactivity I made the tooltips say product rating: then the number that the user is hovering over, in order to more accurately show what my graph is trying to show, which is frequency of each rating number, moreover I changed the mode to index to give me the index values as well as increasing the hover border width to increase the visual interactivity aspect as well as moving the key to the left side of the graph. </p>
+<div class="chart-container" style="position: relative; height:100vh; width:100vw">
+<canvas id="myChart" width="350" height="167">	
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'polarArea',
+    data: {
+        labels: ['10', '9', '8', '7', '6', '5'],
+        datasets: [{
+            label: 'Product Ratings',
+            data: [6, 9, 6, 7, 8, 10],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1,
+            hoverBorderWidth:8,
+        }]
+    },
+    options: {
+    	tooltips: {
+            mode: 'single',
+            borderWidth: '5',
+            callbacks: {
+                label: function(tooltipItem, data) {
+                    var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                    if (label) {
+                        label += ': ';
+                    }
+                    label += Math.round(tooltipItem.yLabel * 100) / 100;
+                    return label;
+                }
+            }
+        },
+        scales: {
+            yAxes: [{
+                display: false
+            }]
+        },
+        title: {
+            display: true,
+            text: 'Blind Skier Project Ratings out of 10',
+            fontSize: 30
+        },
+        legend: {
+        	position:'left',
+            display: true,
+            labels: {
+                fontColor: '#000'
+            }
+        },
+    }
+
+});
+canvas.onclick = function(evt){
+    var activePoints = myChart.getElementsAtEvent(evt);
+};
+</script>
+</canvas>
+</div>
+</body>
+</html>
