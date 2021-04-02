@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>My Slides</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/solarized.min.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/monokai.min.css" id="highlight-theme">
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-transition="slide-in fade-out">
+				<h2>INFO 3402: Weekly Assignement</h2>
+					<p style="color:#CFB87C; font-weight:bold;">By Zachary Chan</p>
+					<p style="color:#565A5C">Due April 2nd</h5>
+			</section>
+			<section data-transition="slide-in fade-out">
+				<h3> The next slide will me my "Some Kind of Media"</h3>
+			</section>
+			<section data-transition="slide-in fade-out">
+				<img src="petergrif.gif">
+			</section>
+			<section data-transition="slide-in fade-out">
+				<h3>Next we will be looking at how to add sequential code blocks, making it easy for the viewer to understand the steps in the code.</h3>
+			</section>
+			<section data-transition="slide-in fade-out">
+						<pre><code data-trim data-line-numbers=3|1,2|4,5|6|7><script type="text/template">
+							This allows us to specify which lines to highlight in order
+							using '|' to separate the specified numbers
+								first we do "<pre><code data-trim data-line-numbers="
+							         So in this example it would show 3 first, then
+							         1 and 2, then 4 and 5, then 6, and lastly 7.
+						           For this example my numbers were '3|1,2|4,5|6|7'
+						    And Ya thats pretty much it!
+							</script></pre></code>
+						</code></pre>
+			</section>
+		</div>
+	</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/notes/notes.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/markdown/markdown.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: 'c/t',
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+</body>
+</html>
