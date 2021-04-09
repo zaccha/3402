@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>My Slides</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/solarized.min.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/monokai.min.css" id="highlight-theme">
+		<script src="https://cdn.jsdelivr.net/npm/vega@3"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-lite@2"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-embed@3"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-transition="slide-in fade-out">
+				<h2>INFO 3402: Weekly Assignement</h2>
+					<p style="color:#CFB87C; font-weight:bold;">By Zachary Chan</p>
+					<p style="color:#565A5C">Due April 2nd</h5>
+			</section>
+			<section data-transition="slide-in fade-out">
+				<div id="vis0"></div>
+				<script type="text/javascript">
+		var spec = {	
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "config": {
+    "view": {
+      "continuousHeight": 800,
+      "continuousWidth": 1000,
+    }
+  },
+  "data": {
+    "url": "https://vega.github.io/vega-datasets/data/cars.json"
+  },
+  "encoding": {
+    "color": {
+      "field": "Origin",
+      "type": "nominal"
+    },
+    "x": {
+      "field": "Horsepower",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "Miles_per_Gallon",
+      "type": "quantitative"
+    }
+  },
+  "mark": "point"
+};  /* JSON dump of your chart's spec */
+		var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+		vegaEmbed("#vis0", spec, opt);
+	</script>
+			</section>
+			<section data-transition="slide-in fade-out">
+				<div id="vis1"></div>
+				<script type="text/javascript">
+					var spec = {
+  {
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "A basic stacked bar chart example.",
+  "width": 500,
+  "height": 200,
+  "padding": 5,
+
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {"x": 0, "y": 28, "c": 0}, {"x": 0, "y": 55, "c": 1},
+        {"x": 1, "y": 43, "c": 0}, {"x": 1, "y": 91, "c": 1},
+        {"x": 2, "y": 81, "c": 0}, {"x": 2, "y": 53, "c": 1},
+        {"x": 3, "y": 19, "c": 0}, {"x": 3, "y": 87, "c": 1},
+        {"x": 4, "y": 52, "c": 0}, {"x": 4, "y": 48, "c": 1},
+        {"x": 5, "y": 24, "c": 0}, {"x": 5, "y": 49, "c": 1},
+        {"x": 6, "y": 87, "c": 0}, {"x": 6, "y": 66, "c": 1},
+        {"x": 7, "y": 17, "c": 0}, {"x": 7, "y": 27, "c": 1},
+        {"x": 8, "y": 68, "c": 0}, {"x": 8, "y": 16, "c": 1},
+        {"x": 9, "y": 49, "c": 0}, {"x": 9, "y": 15, "c": 1}
+      ],
+      "transform": [
+        {
+          "type": "stack",
+          "groupby": ["x"],
+          "sort": {"field": "c"},
+          "field": "y"
+        }
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "x",
+      "type": "band",
+      "range": "width",
+      "domain": {"data": "table", "field": "x"}
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "range": "height",
+      "nice": true, "zero": true,
+      "domain": {"data": "table", "field": "y1"}
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "range": "category",
+      "domain": {"data": "table", "field": "c"}
+    }
+  ],
+
+  "axes": [
+    {"orient": "bottom", "scale": "x", "zindex": 1},
+    {"orient": "left", "scale": "y", "zindex": 1}
+  ],
+
+  "marks": [
+    {
+      "type": "rect",
+      "from": {"data": "table"},
+      "encode": {
+        "enter": {
+          "x": {"scale": "x", "field": "x"},
+          "width": {"scale": "x", "band": 1, "offset": -1},
+          "y": {"scale": "y", "field": "y0"},
+          "y2": {"scale": "y", "field": "y1"},
+          "fill": {"scale": "color", "field": "c"}
+        },
+        "update": {
+          "fillOpacity": {"value": 1}
+        },
+        "hover": {
+          "fillOpacity": {"value": 0.5}
+        }
+      }
+    }
+  ]
+}
+		var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+		vegaEmbed("#vis1", spec, opt);
+				</script>
+			</section>
+			<section data-transition="slide-in fade-out">
+				<h3>Next we will be looking at how to add sequential code blocks, making it easy for the viewer to understand the steps in the code.</h3>
+			</section>
+			<section data-transition="slide-in fade-out">
+						<pre><code data-trim data-line-numbers=3|1,2|4,5|6|7><script type="text/template">
+							This allows us to specify which lines to highlight in order
+							using '|' to separate the specified numbers
+								first we do "<pre><code data-trim data-line-numbers="
+							         So in this example it would show 3 first, then
+							         1 and 2, then 4 and 5, then 6, and lastly 7.
+						           For this example my numbers were '3|1,2|4,5|6|7'
+						    And Ya thats pretty much it!
+							</script></pre></code>
+						</code></pre>
+			</section>
+		</div>
+	</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/notes/notes.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/markdown/markdown.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: 'c/t',
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+</body>
+</html>
