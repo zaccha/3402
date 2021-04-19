@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Weekly Assignment 12</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/solarized.min.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/monokai.min.css" id="highlight-theme">
+		<script src="https://cdn.jsdelivr.net/npm/vega@3"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-lite@2"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-embed@3"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega4"></script>
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-transition="slide-in fade-out">
+				<h2>INFO 3402: Weekly Assignement 12</h2>
+					<p style="color:#CFB87C; font-weight:bold;">By Zachary Chan</p>
+					<p style="color:#565A5C">Due April 9th</h5>
+			</section>
+      <section data-transition="slide-in fade-out">
+        <h2>visualization 1</h2>
+      </section>
+			<section data-transition="slide-in fade-out">
+				<div id="vis0"></div>
+				<script type="text/javascript">
+		var spec = {	
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 600,
+            "height": 600,
+            "data": {
+              "url": "https://vega.github.io/vega-datasets/data/income.json"
+                        },
+            "encoding":{
+              "x": {
+              "field": "region",
+              "type": "nominal",
+              "title": "Region"
+            },
+              "y": {
+              "aggregate":"sum",
+              "field": "total",
+              "type": "quantitative",
+              "sort": "-x",
+              "title":"Total Income"
+              },
+              "color": {
+                "field": "region",
+                "type": "nominal"
+              }
+            },
+            "layer":[{
+              "mark": "bar"
+            },{
+              "mark": {
+                "type": "text",
+                "align": "center",
+                "baseline":"top",
+                "dx":5
+              },
+              "encoding": {
+                "text":{
+                  "aggregate":"sum",
+                  "field": "total",
+                  "type": "quantitative"
+              }
+            }
+        }]
+};  /* JSON dump of your chart's spec */
+		var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+		vegaEmbed("#vis0", spec, opt);
+	</script>
+			</section>
+			
+			<section data-transition="slide-in fade-out">
+				<h3>Codeblock Tutorial Vis #1</h3>
+			</section>
+			<section data-transition="slide-in fade-out">
+						<pre><code data-trim data-line-numbers=3|1,2|4,5|6|7|8><script type="text/template">
+							We then import the URL file
+              With the URL file imported, we can now start defining and specifying where and how the raw data is presented
+							first we do "have to create the sections via the reveal js sections"
+								Next what I did was aggregate the total income from each of the different regions
+							        This allows me to get a spread on which regions have the greatest income vs the lowest
+							        we do this by doing "aggreagte":"sum" under either the y or x axis
+						        In addition we can specify the color field to add a variation of colors using "color": {(and then this is where you specify what you want colored) }
+						    And Ya thats pretty much it!
+							</script></pre></code>
+						</code></pre>
+			</section>
+			<section>
+				<h2>Visualization 2</h2>
+			</section>
+      <section>
+        <div id="vis1"></div>
+        <script type="text/javascript">
+    var spec = {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 600,
+            "height": 600,
+            "data": {
+              "url": "https://vega.github.io/vega-datasets/data/income.json"
+                        },
+            "encoding":{
+              "x": {
+              "field": "name",
+              "type": "nominal",
+              "title": "State"
+            },
+              "y": {
+              "aggregate":"mean",
+              "field": "total",
+              "type": "quantitative",
+              "sort": "-x",
+              "title":"Mean Income"
+              },
+              "color": {
+                "field": "name",
+                "type": "nominal",
+                "title": "Average income per state"
+              }
+            },
+            "layer":[{
+              "mark": "bar"
+            },{
+              "mark": {
+                "type": "text",
+                "align": "center",
+                "baseline":"top",
+                "dx":5
+              },
+              "encoding": {
+                "text":{
+                  "aggregate":"sum",
+                  "field": "total",
+                  "type": "quantitative",
+                  "format": ",.0f"
+              }
+            }
+        }]
+    };
+        var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+    vegaEmbed("#vis1", spec, opt);
+  </script>
+      </section>
+      <section>
+        <h2>Code Block Tutorial Vis #2</h2>
+      </section>
+      <section>
+        <pre><code data-trim data-line-numbers=3|1,2|4,5|6|7|8><script type="text/template">
+              so what I did was change the variables I was looking at 
+              from region and total income to state and mean income
+              So for this one I used the same dataset
+                To do this I made the x variable encompass the states values
+                      This allowed me to look at all the states data compared to each other
+                      Then to find the mean I did "aggregate":"mean" for the y axis that has the values of the total income
+                    I tried to make the marked numbers sideways but did not work
+                And Ya thats pretty much it!
+              </script></pre></code>
+            </code></pre>
+      </section>
+		</div>
+	</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/notes/notes.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/markdown/markdown.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: 'c/t',
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+</body>
+</html>
