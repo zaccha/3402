@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Weekly Assignment 12</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/solarized.min.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/monokai.min.css" id="highlight-theme">
+		<script src="https://cdn.jsdelivr.net/npm/vega@3"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-lite@2"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-embed@3"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega4"></script>
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h2>INFO 3402: Weekly Assigment 12</h2>
+				<p>Due April 19th</p>
+				<p>Zachary Chan</p>
+			</section>
+			<section>
+				<div id="#vis0"></div>
+				<script type="text/javascript">
+					var spec = {
+						"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+						"width": 600,
+						"height": 1000,
+						"data": {
+						  "url": "https://vega.github.io/vega-datasets/data/income.json"
+												},
+						"encoding":{
+						  "x": {
+						  "field": "region",
+						  "type": "nominal",
+						  "title": "Region"
+						},
+						  "y": {
+						  "aggregate":"sum",
+						  "field": "total",
+						  "type": "quantitative",
+						  "sort": "-x",
+						  "title":"Total Income"
+						  },
+						  "color": {
+						    "field": "region",
+						    "type": "nominal"
+						  }
+						},
+						"layer":[{
+						  "mark": "bar"
+						},{
+						  "mark": {
+						    "type": "text",
+						    "align": "center",
+						    "baseline":"top",
+						    "dx":5
+						  },
+						  "encoding": {
+						    "text":{
+						      "aggregate":"sum",
+						      "field": "total",
+						      "type": "quantitative"
+    					}
+  					}
+				}]
+			};
+			var opt = {"renderer": "canvas", "actions": false}
+				;
+				vegaEmbed("#vis0", spec, opt);
+				</script>
+			</section>
+		</div>
+	</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/notes/notes.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/markdown/markdown.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js"></script>
+		<script>
+		Reveal.initialize({
+				hash: true,
+				slideNumber: 'c/t',
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+</body>
+</html>
