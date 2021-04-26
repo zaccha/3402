@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Weekly Assignment 13</title>
+	  <script src="https://cdn.jsdelivr.net/npm/vega@3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@3"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega4"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</head>
+<body>
+	<section>
+<h1>Weekly Assignment 13! - Zachary Chan</h1>
+<br>
+<p>Doge is a very interesting phenomenom that we have seen grow and prosper right under our noses as a society. The essense of Doge and really all cryto currency is to decentralize money and transactions. By having these cryto currencies, wec an apply them to soceity as many of the crytos are meant for person to person transactions without the bank interferring or taking a cut of the total.</p>
+<p>Moreover my point behind this is how effective and useful Dogecoin and Cryto's are going to be in our near future. We have already seen the sustainability that Bitcoin most famously has done throughout the past 5 or more years, where people doubted it at first, as cryto was such a new idea and did not really make sense to most people, then when the first big jump happened to ~20k there was still doubt as people thought it was just a fad. This however has been disproven simply by time as today the coin is worth between 50k to 62k within the past month or so. As we have seen bitcoin grow, we have seen a massive amount of other coins grow and emerge in the cryto world for many different purposes. Dogecoin was one of these coins as it started out as a meme of sorts as its named Doge like dog, yet meme culture is alot bigger and influential than people thought as we have seen.</p>
+<p>The best part about cryto is that the people who doubt it are the ones who are missing out on all the easy money to be made. We can see this happen with Dogecoin, as people over the past 2 years or so have been doubting the legitamacy of a memecoin really amounting to anything. This was probrably true since it was like a penny stock for the longest time, always being in the .04-.05 range. Yet on April 12th we saw the start of the spike where it grew by 800% reaching .41 on April 19th. This simply just shows the potential of the market with the majority of society and people still doubting the legitamacy of the idea. </p>
+<p>In addition since cryto is so new, being started within a decade or so, there is so much potential for growth. If you imagine how much money is invested in the stock market, a very established thing, and having that amount invested into cryto, it could revolutionize transactions across the globe, as well as make many people rich, hopefully me included.</p>
+<p>Another cryto that has just made headway into the market is Safemoon. Safemoon was released 5 months ago, where it is a penny stock with 6-7 decimal places. A cool thing about Safemoon is that when you buy safemoon you get taxed 10% of what you are putting into it, hwoever the reasoning behind this is that whenever others invest into Safemoon you actually gain and are given more safemoon coins, creating a self sustaining market in ways. This however has been highly controversal as people think of it as a ponzie scheme, yet the Founders and creators are all very public and have lots of public engagement and itneraction so if they were to be running a ponzie scheme their lives and carreers would be ruined. This reminds me of when doge and bitcoin were just picking up traction and media, yet you guys know how those turned out.</p>
+</section>
+<section>
+<div id="vis0"></div>
+				<script type="text/javascript">
+		var spec = {	
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 600,
+            "height": 600,
+            "data": {
+              "url": "https://raw.githubusercontent.com/cuinfoscience/INFO3402-Spring2021/main/Week16/DOGE-USD.csv"
+                        },
+            "encoding":{
+              "x": {
+              "field": "Close",
+              "type": "quantitative",
+              "title": "Close"
+            },
+              "y": {
+              "field": "Volume",
+              "type": "quantitative",
+              "sort": "-x",
+              "title":"Volume"
+              },
+              "color": {
+                "field": "Close",
+                "type": "nominal"
+              }
+            },
+            "layer":[{
+              "mark": "bar"
+            },{
+              "mark": {
+                "type": "text",
+                "align": "center",
+                "baseline":"top",
+                "dx":5
+              },
+        }]
+};  /* JSON dump of your chart's spec */
+		var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+		vegaEmbed("#vis0", spec, opt);
+	</script>
+</section>
+<br>
+<section>
+	<div id="#vis1"></div>
+				<script type="text/javascript">
+		var spec = {	
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 600,
+            "height": 600,
+            "data": {
+              "url": "https://raw.githubusercontent.com/cuinfoscience/INFO3402-Spring2021/main/Week16/DOGE-USD.csv"
+                        },
+            "encoding":{
+              "x": {
+              "field": "Date",
+              "type": "temporal",
+              "title": "Close"
+            },
+              "y": {
+              "field": "Volume",
+              "type": "quantitative",
+              "sort": "-x",
+              "title":"Volume"
+              },
+              "color": {
+                "field": "Volume",
+                "type": "quantitative"
+              }
+            },
+            "layer":[{
+              "mark": "bar"
+            },{
+              "mark": {
+                "type": "text",
+                "align": "center",
+                "baseline":"top",
+                "dx":5
+              },
+        }]
+};  /* JSON dump of your chart's spec */
+		var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+		vegaEmbed("#vis1", spec, opt);
+	</script>
+</section>
+</body>
+</html>
